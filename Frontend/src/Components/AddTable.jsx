@@ -1,6 +1,6 @@
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 
-const AddTable = ({ onClose, onSave, defaultTableNum}) => {
+const AddTable = ({ onClose, onSave, defaultTableNum }) => {
   const [tableName, setTableName] = useState("Table");
   const [tableNum, setTableNum] = useState(defaultTableNum);
   const [chairs, setChairs] = useState(1);
@@ -18,7 +18,7 @@ const AddTable = ({ onClose, onSave, defaultTableNum}) => {
   return (
     <div className="modal-overlay" onClick={handleClickOutside}>
       <div ref={modalRef} className="modal-content">
-        <form onSubmit={handleSubmit} className="modal-form">
+        <form  className="modal-form">
           <div className="input-group">
             <input
               className="input-table-name"
@@ -57,13 +57,10 @@ const AddTable = ({ onClose, onSave, defaultTableNum}) => {
               <option value="08">08</option>
             </select>
           </div>
-          <div className="modal-btns">
-            <button type="submit">Save</button>
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
-          </div>
         </form>
+          <div >
+            <button className="create-btn" onClick={handleSubmit}>Create</button>
+          </div>
       </div>
     </div>
   );
