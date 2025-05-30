@@ -36,7 +36,9 @@
 }
 
 /* Dashboard Styling */
-
+.dashboard-container{
+  padding: 0 50px;
+}
 .total-cards {
   display: flex;
   flex-direction: row;
@@ -45,10 +47,14 @@
 
 .card {
   height: 130px;
-  width: 220px;
+  width: 240px;
   background-color: #f0f5f3;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .charts {
   display: flex;
@@ -60,8 +66,13 @@
   width: 350px;
   background-color: #f0f5f3;
 }
-.chefs {
-  margin-left: 20px;
+.chef-list {
+  display: grid;
+  grid-template-columns:  200px 1fr;
+}
+.chef-heading{
+  padding:5px 20px;
+  background-color: #F0F0F0;
 }
 .nav-link {
   color: black;
