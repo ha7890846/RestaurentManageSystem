@@ -5,7 +5,8 @@ import orderLogo from "../assets/total-order.png";
 import chefLogo from "../assets/total-chef.png";
 import clientLogo from "../assets/total-clients.png";
 import revLogo from "../assets/total-rev.png";
-import { FaRupeeSign } from "react-icons/fa";
+import { MdOutlineCurrencyRupee } from "react-icons/md";
+
 
 const Dashboard = () => {
   const [chef, setChef] = useState([]);
@@ -24,9 +25,8 @@ const Dashboard = () => {
   };
   return (
     <main className="dashboard-container">
-      <div>
-        <h1>Analytics</h1>
-      </div>
+      <h1 style={{ fontSize: "22px", fontWeight: "250" }}>Analytics</h1>
+
       <div className="total-cards">
         <div className="card">
           <img src={chefLogo} alt="chef-logo" />
@@ -51,10 +51,16 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="card">
-          <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <img src={revLogo} alt="chef-logo" />
-            <div style={{position:"relative",right:"54px"}}>
-              <FaRupeeSign size={30}/>
+            <div style={{ position: "relative", right: "54px" }}>
+              <MdOutlineCurrencyRupee size={30} />
             </div>
           </div>
           <div>
@@ -79,9 +85,36 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="charts">
-        <div className="chart"></div>
-        <div className="chart"></div>
-        <div className="chart"></div>
+        <div className="chart-box">
+          <div className="chart-title-box">
+            <div>
+              <h4 style={{ margin: "0" }}>Order Summary</h4>
+              <p style={{ margin: "0", fontSize: "12px" }}>
+                Stats, How we Serve the Best food Service.
+              </p>
+            </div>
+            <div>filter</div>
+          </div>
+          <div className="chart-stats">
+            <div className="order-count">
+              <div className="order-type">
+                09 <br /> Served
+              </div>
+              <div className="order-type">
+                05 <br />Dine In</div>
+              <div className="order-type">
+                06 <br />Take Away</div>
+            </div>
+          </div>
+        </div>
+        <div className="chart-box">
+          <div className="chart-title"></div>
+          <div className="chart-stats"></div>
+        </div>
+        <div className="chart-box">
+          <div className="chart-title"></div>
+          <div className="chart-stats"></div>
+        </div>
       </div>
       <div className="chef-list">
         <div className="chef-name">
