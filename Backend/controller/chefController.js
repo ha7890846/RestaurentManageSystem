@@ -5,7 +5,7 @@ exports.getAllChefs = async (req, res) => {
     const chefs = await Chef.find();
     res.json(chefs);
   } catch (err) {
-    res.status(500).json({ message: ` err.message ` });
+    res.status(500).json({ message: err.message});
   }
 };
 exports.addChef = async (req, res) => {

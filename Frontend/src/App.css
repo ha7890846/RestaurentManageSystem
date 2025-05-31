@@ -118,8 +118,8 @@
 }
 .dlt-table {
   position: relative;
-  left: 50px;
-  top: 20px;
+  left: 35%;
+  top: 5%;
   border: none;
 }
 .dlt-table button {
@@ -130,7 +130,7 @@
   margin: 15px 0 0 0;
 }
 .table-name {
-  font-size: xx-large;
+  font-size: 1.5rem;
   font-weight: 450;
   margin: 0;
 }

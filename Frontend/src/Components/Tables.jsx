@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import AddTable from "./AddTable";
 import { LiaChairSolid } from "react-icons/lia";
 import { RiDeleteBin6Line } from "react-icons/ri";
-
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 const Tables = () => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState([]);
@@ -10,39 +11,73 @@ const Tables = () => {
 
   const handleOpen = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
-  const deleteTable = (number) => {
-    setFormData(formData.filter((item) => item.number !== number));
+  const deleteTable = async (tableId) => {
+    if (!window.confirm("Are you sure you want to delete this table?")) return;
+
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/api/table/${tableId}`
+      );
+
+      if (response.data) {
+        setFormData((prevTables) =>
+          prevTables.filter((table) => table._id !== tableId)
+        );
+        toast.success("Table deleted successfully!");
+      } else {
+        alert(response.data.error || "Failed to delete table");
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete table. Please try again.");
+    }
   };
-  const handleSave = (newTable) => {
-    setFormData([...formData, newTable]);
-    setNextTableNum(Math.max(nextTableNum, newTable.number) + 1);
-    handleClose();
+  const handleSave = async (newTable) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/table",
+        newTable
+      );
+      setFormData([...formData, response.data]);
+      toast.success(`New Table Added Successfully !`);
+      setNextTableNum(newTable.tableNum + 1);
+      handleClose();
+    } catch (error) {
+      console.error("Failed to save table:", error);
+    }
   };
   useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
+    fetchTables();
+  }, []);
+  const fetchTables = async () => {
+    const res = await axios.get("http://localhost:3000/api/table");
+    setFormData(res.data);
+    console.log(res.data);
+  };
   return (
     <main className="table-container">
+      <div>
+        <Toaster />
+      </div>
       <h1>Tables:</h1>
       <section className="planing">
         {formData.map((item) => (
-          <div key={item.number} className="table">
-            <div   className="dlt-table">
-              <button
-                onClick={() => deleteTable(item.number)}
-              >
+          <div key={item._id} className="table">
+            <div className="dlt-table">
+              <button onClick={() => deleteTable(item._id)}>
                 <RiDeleteBin6Line size={20} />
-              </button> 
+              </button>
             </div>
             <div className="table-details">
-              <h1 className="table-name">{item.name}</h1>
-              <h1 className="table-num">{String(item.number).padStart(2, '0')}</h1>
+              <h1 className="table-name">{item.tableName}</h1>
+              <h1 className="table-num">
+                {String(item.tableNum).padStart(2, "0")}
+              </h1>
             </div>
             <div className="chair-person">
               <p>
                 <LiaChairSolid />
-                {item.chairs}
+                {item.chairPerson}
               </p>
             </div>
           </div>

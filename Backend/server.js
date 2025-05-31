@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const chefRoutes = require("./routes/chefRoutes");
+const tableRoutes = require("./routes/tableRoutes");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -15,7 +16,7 @@ mongoose
 
 //Routes
 app.use("/api", chefRoutes);
-
+app.use("/api", tableRoutes);
 
 // Listener...
 const PORT = 3000;

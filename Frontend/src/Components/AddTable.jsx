@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-
+import { useState, useRef} from "react";
 const AddTable = ({ onClose, onSave, defaultTableNum }) => {
   const [tableName, setTableName] = useState("Table");
   const [tableNum, setTableNum] = useState(defaultTableNum);
@@ -12,7 +11,11 @@ const AddTable = ({ onClose, onSave, defaultTableNum }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave({ name: tableName, number: tableNum, chairs: chairs });
+    if(tableNum>40){
+      alert(`Table Number should be between "1-40"`)
+      return;
+    }
+    onSave({ tableName: tableName, tableNum: tableNum, chairPerson: chairs });
   };
 
   return (
