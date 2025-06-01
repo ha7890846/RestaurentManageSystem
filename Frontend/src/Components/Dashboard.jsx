@@ -18,7 +18,7 @@ const Dashboard = () => {
   };
 
   const fetchChefs = async () => {
-    const res = await axios.get("http://localhost:3000/api/chefs");
+    const res = await axios.get("https://restaurent-backend-bzlm.onrender.com/api/chefs");
     setChef(res.data);
     console.log(res.data);
     console.log(totalChef);
