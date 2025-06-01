@@ -16,7 +16,7 @@ const Tables = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/table/${tableId}`
+        `https://restaurent-backend-bzlm.onrender.com/api/table/${tableId}`
       );
 
       if (response.data) {
@@ -35,7 +35,7 @@ const Tables = () => {
   const handleSave = async (newTable) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/table",
+        "https://restaurent-backend-bzlm.onrender.com/api/table",
         newTable
       );
       setFormData([...formData, response.data]);
@@ -50,7 +50,7 @@ const Tables = () => {
     fetchTables();
   }, []);
   const fetchTables = async () => {
-    const res = await axios.get("http://localhost:3000/api/table");
+    const res = await axios.get("https://restaurent-backend-bzlm.onrender.com/api/table");
     setFormData(res.data);
     console.log(res.data);
   };
