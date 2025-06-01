@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 //DB connection
 mongoose
-  .connect("mongodb://localhost:27017/restaurent")
+  .connect(process.env.MONGODB_URI)
   .then(console.log("MongoDB is Connected!"))
   .catch((err) => {
     console.error(`Error to connect DB: ${err}`);
