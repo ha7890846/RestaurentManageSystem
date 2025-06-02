@@ -6,9 +6,9 @@ import chefLogo from "../assets/total-chef.png";
 import clientLogo from "../assets/total-clients.png";
 import revLogo from "../assets/total-rev.png";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
-import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 import sourceData from "../assets/Source/Data.json";
+import { TableArrange } from "./TableArrange";
 const Dashboard = () => {
   const [chef, setChef] = useState([]);
   useEffect(() => {
@@ -23,8 +23,6 @@ const Dashboard = () => {
       "https://restaurent-backend-bzlm.onrender.com/api/chefs"
     );
     setChef(res.data);
-    console.log(res.data);
-    console.log(totalChef);
   };
   return (
     <main className="dashboard-container">
@@ -173,13 +171,13 @@ const Dashboard = () => {
                 <div>
                   <h4 style={{ margin: "0" }}>Tables</h4>
                   <p style={{ margin: "0", fontSize: "12px" }}>
-                    Stats, How we Serve the Best food Service.
+                    Here is the Table Mangement Flow.
                   </p>
                 </div>
                 <div>Reserved</div>
               </div>
               <div className="chart-stats">
-                
+                <TableArrange/>
               </div>
               
           </div>
