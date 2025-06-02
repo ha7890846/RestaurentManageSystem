@@ -1,5 +1,5 @@
 #root {
-  color: #6E6E6E;
+  color: #6e6e6e;
   background-color: #f0f5f3;
   margin: 15px;
   display: grid;
@@ -36,7 +36,7 @@
 }
 
 /* Dashboard Styling */
-.dashboard-container{
+.dashboard-container {
   padding: 0 40px;
 }
 .total-cards {
@@ -63,48 +63,70 @@
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.chart-box{
+.chart-box {
   height: 42vh;
   width: 26vw;
   background-color: #f0f5f3;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   border-radius: 8px;
 }
-.chart-title-box{
+.chart-title-box {
   height: 25%;
   display: flex;
   align-items: center;
   padding: 0 20px;
   justify-content: space-between;
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #d9d9d9;
 }
-.chart-stats{
+.chart-stats {
+  padding: 10px;
+}
+.chart-doughnut {
+  height: 140px;
+  width: 100%;
+}
+.rev-graph{
   padding: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  width: calc(100% - 40px);
+  height: 175px;
+  background-color: white;
 }
-.order-count{
+.order-count {
   display: flex;
   justify-content: space-between;
 }
-.order-type{
+.order-type {
   height: 70px;
   width: 100px;
-  font-weight: 400;
+  font-weight: 250;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
 }
 .chef-list {
   display: grid;
-  grid-template-columns:  200px 1fr;
+  grid-template-columns: 350px 1fr;
+  color: #000;
 }
-.chef-heading{
-  padding:5px 20px;
-  background-color: #F0F0F0;
+.chef-order li,.chef-list li{
+  list-style: none;
+  border-bottom: 1px solid #DDDDDD;
+  padding:12px;
+  padding-left:25px;
 }
+
+.chef-heading {
+  margin: 0px 0 10px 0;
+  padding: 5px 20px;
+  background-color: #f0f0f0;
+}
+
 .nav-link {
   color: black;
   margin: 8px;
@@ -173,7 +195,7 @@
   position: relative;
   left: 50px;
 }
-.chair-person p{
+.chair-person p {
   margin: 0 0 10px 0;
 }
 .addTable-btn {
@@ -245,7 +267,7 @@
   width: 50px;
   padding: 5px;
   border-radius: 10px;
-  color: #4E4E4E;
+  color: #4e4e4e;
   font-size: large;
 }
 
@@ -256,7 +278,7 @@
   border-radius: 15px;
   background-color: #505050;
 }
-.create-btn:hover{
+.create-btn:hover {
   background-color: #918383;
 }
 

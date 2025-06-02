@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Take Away",
+    "value": 45
+  },
+  {
+    "label": "Served",
+    "value": 75
+  },
+  {
+    "label": "Dine-in",
+    "value": 25
+  }
+]

@@ -6,8 +6,9 @@ import chefLogo from "../assets/total-chef.png";
 import clientLogo from "../assets/total-clients.png";
 import revLogo from "../assets/total-rev.png";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
-
-
+import { Chart as ChartJS } from "chart.js/auto";
+import { Doughnut } from "react-chartjs-2";
+import sourceData from "../assets/Source/Data.json";
 const Dashboard = () => {
   const [chef, setChef] = useState([]);
   useEffect(() => {
@@ -18,7 +19,9 @@ const Dashboard = () => {
   };
 
   const fetchChefs = async () => {
-    const res = await axios.get("https://restaurent-backend-bzlm.onrender.com/api/chefs");
+    const res = await axios.get(
+      "https://restaurent-backend-bzlm.onrender.com/api/chefs"
+    );
     setChef(res.data);
     console.log(res.data);
     console.log(totalChef);
@@ -89,7 +92,7 @@ const Dashboard = () => {
           <div className="chart-title-box">
             <div>
               <h4 style={{ margin: "0" }}>Order Summary</h4>
-              <p style={{ margin: "0", fontSize: "12px" }}>
+              <p style={{ margin: "5px 0", fontSize: "12px" }}>
                 Stats, How we Serve the Best food Service.
               </p>
             </div>
@@ -101,19 +104,85 @@ const Dashboard = () => {
                 09 <br /> Served
               </div>
               <div className="order-type">
-                05 <br />Dine In</div>
+                05 <br />
+                Dine In
+              </div>
               <div className="order-type">
-                06 <br />Take Away</div>
+                06 <br />
+                Take Away
+              </div>
             </div>
           </div>
+          <div className="chart-doughnut">
+            <Doughnut
+              data={{
+                labels: sourceData.map((data) => data.label),
+                datasets: [
+                  {
+                    label: "Count",
+                    data: [300, 50, 100],
+                    backgroundColor: ["#5B5B5B", "#828282", "#2C2C2C"],
+                    hoverOffset: 3,
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: 10 },
+                plugins: {
+                  legend: {
+                    position: "right",
+                    align: "center",
+                    labels: {
+                      padding: 10,
+                      font: {
+                        size: 12,
+                      },
+                      usePointStyle: "true",
+                      pointStyle: "rect",
+                    },
+                  },
+                },
+              }}
+            />
+          </div>
         </div>
-        <div className="chart-box">
-          <div className="chart-title"></div>
-          <div className="chart-stats"></div>
+        <div className="chart-box-2">
+          <div className="chart-box">
+            <div className="chart-title-box">
+              <div>
+                <h4 style={{ margin: "0" }}>Revenue</h4>
+                <p style={{ margin: "5px 0", fontSize: "12px" }}>
+                  Profit tells the real story of Business.
+                </p>
+              </div>
+              <div>filter</div>
+            </div>
+            <div className="chart-stats">
+             <div className="rev-graph">
+
+             </div>
+            </div>
+            
+          </div>
         </div>
-        <div className="chart-box">
-          <div className="chart-title"></div>
-          <div className="chart-stats"></div>
+        <div className="chart-box-3">
+            <div className="chart-box">
+              <div className="chart-title-box">
+                <div>
+                  <h4 style={{ margin: "0" }}>Tables</h4>
+                  <p style={{ margin: "0", fontSize: "12px" }}>
+                    Stats, How we Serve the Best food Service.
+                  </p>
+                </div>
+                <div>Reserved</div>
+              </div>
+              <div className="chart-stats">
+                
+              </div>
+              
+          </div>
         </div>
       </div>
       <div className="chef-list">
