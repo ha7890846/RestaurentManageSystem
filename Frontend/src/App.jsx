@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Tables from "./Components/Tables";
 import Orders from "./Components/Orders";
 import MenuPage from "./Components/MenuPage";
+import CartItem from "./Components/CartItem";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
         </Route>
           <Route path="/menu/:category" element={<MenuPage />} />
+          <Route path="/cart" element={<CartItem />} />
       </Routes>
     </BrowserRouter>
   );
