@@ -5,12 +5,15 @@ import orderLogo from "../assets/total-order.png";
 import chefLogo from "../assets/total-chef.png";
 import clientLogo from "../assets/total-clients.png";
 import revLogo from "../assets/total-rev.png";
+import { Chart as ChartJS } from "chart.js/auto";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { Doughnut } from "react-chartjs-2";
 import sourceData from "../assets/Source/Data.json";
 import { TableArrange } from "./TableArrange";
 const Dashboard = () => {
   const [chef, setChef] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     fetchChefs();
   }, []);
@@ -19,11 +22,19 @@ const Dashboard = () => {
   };
 
   const fetchChefs = async () => {
-    const res = await axios.get(
-      "https://restaurent-backend-bzlm.onrender.com/api/chefs"
-    );
-    setChef(res.data);
+    try {
+      const res = await axios.get(
+        "https://restaurent-backend-bzlm.onrender.com/api/chefs"
+      );
+      setChef(res.data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
+  if (loading) return <div>Loading menu items...</div>;
+  if (error) return <div>Error: {error}</div>;
   return (
     <main className="dashboard-container">
       <h1 style={{ fontSize: "22px", fontWeight: "250" }}>Analytics</h1>
@@ -158,28 +169,24 @@ const Dashboard = () => {
               <div>filter</div>
             </div>
             <div className="chart-stats">
-             <div className="rev-graph">
-
-             </div>
+              <div className="rev-graph"></div>
             </div>
-            
           </div>
         </div>
         <div className="chart-box-3">
-            <div className="chart-box">
-              <div className="chart-title-box">
-                <div>
-                  <h4 style={{ margin: "0" }}>Tables</h4>
-                  <p style={{ margin: "0", fontSize: "12px" }}>
-                    Here is the Table Mangement Flow.
-                  </p>
-                </div>
-                <div>Reserved</div>
+          <div className="chart-box">
+            <div className="chart-title-box">
+              <div>
+                <h4 style={{ margin: "0" }}>Tables</h4>
+                <p style={{ margin: "0", fontSize: "12px" }}>
+                  Here is the Table Mangement Flow.
+                </p>
               </div>
-              <div className="chart-stats">
-                <TableArrange/>
-              </div>
-              
+              <div>Reserved</div>
+            </div>
+            <div className="chart-stats">
+              <TableArrange />
+            </div>
           </div>
         </div>
       </div>

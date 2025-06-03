@@ -2,7 +2,6 @@ import { GiHamburger } from "react-icons/gi";
 import { GiFullPizza } from "react-icons/gi";
 import { TbCup } from "react-icons/tb";
 import { IoArrowBackCircle } from "react-icons/io5";
-
 import { NavLink, Outlet } from "react-router-dom";
 import veggieIcon from "../assets/salad.png";
 import friesIcon from "../assets/french-fries.png";

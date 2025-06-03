@@ -1,18 +1,19 @@
 ### This is readme
-chickenBurger.jpeg
-ChickenDoublePattyBurger.jpeg
-CrispyChickenBurger.jpeg
-CrispyChickenBurgerChesse.jpeg
-CrispyVegBurger.jpeg
-crispyVegDouble.jpeg
-CruchyChickenTaco.jpeg
-VeggieBurger.jpeg
-VeggieDoublePatty.jpeg
-vegMakhaniBurst.jpeg
-WhooperJr.jpeg
 
+{chickenBurger}
+{ChickenDoublePattyBurger}
+{CrispyChickenBurger}
+{CrispyChickenBurgerChesse}
+{CrispyVegBurger}
+{crispyVegDouble}
+{CruchyChickenTaco}
+{VeggieBurger}
+{VeggieDoublePatty}
+{vegMakhaniBurst}
+{WhooperJr}
 
---------------------
+---
+
 Americano-Small.jpeg
 Berry-Blast.jpeg
 cafe-latte-Regular.jpeg
@@ -32,7 +33,9 @@ MediumSoftDrink.jpeg
 Muffin.jpeg
 Sprite-M.jpeg
 Water.jpeg
------------------------------
+
+---
+
 chatpata-tomato-onion.jpg
 cheesy-spicy-delight.jpg
 chicken-tikka-cheese.jpg
@@ -54,7 +57,9 @@ schezwan-margherita.jpg
 spicy-sweet-corn-onion.jpg
 Tandoori-paneer.jpg
 veggie-supreme-cheese.jpg
---------------------------
+
+---
+
 Boneless-Wings-Regular.jpeg
 Boneless-Wings.jpeg
 Chicken-Wings-Fried.jpeg
@@ -70,7 +75,9 @@ Peri-peri-Fries.jpeg
 Peri-peri-spice-mix.jpeg
 Saucy-Fries.jpeg
 Veg-pizza-puff.jpeg
----------------------------
+
+---
+
 beetroot.jpeg
 brinjal.jpeg
 buckwheat.jpg
