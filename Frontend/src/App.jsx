@@ -4,9 +4,7 @@ import Dashboard from "./Components/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Tables from "./Components/Tables";
 import Orders from "./Components/Orders";
-import OrderCart from "./Components/OrderCart";
-import Burgers from "./Components/Burgers";
-import Pizza from "./Components/Pizza";
+import MenuPage from "./Components/MenuPage";
 function App() {
   return (
     <BrowserRouter>
@@ -16,10 +14,7 @@ function App() {
           <Route path="/tables" element={<Tables />} />
           <Route path="/orders" element={<Orders />} />
         </Route>
-        <Route path="/cart" element={<OrderCart />}>
-          <Route path="burger" element={<Burgers />} />
-          <Route path="pizza" element={<Pizza />} />
-        </Route>
+          <Route path="/menu/:category" element={<MenuPage />} />
       </Routes>
     </BrowserRouter>
   );

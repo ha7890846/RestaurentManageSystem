@@ -1,5 +1,18 @@
 ### This is readme
 
+db.menuItems.insertMany([
+{ {name: "Chicken Burger",price:225,category:"burgers"},
+{ {name: "Chicken Double Patty Burger",price:225,category:"burgers" },
+{ {name: "Crispy Chicken Burger",price:225,category:"burgers" },
+{ {name: "Crispy Chicken Burger Cheese",price:225,category:"burgers" },
+{ {name: "Crispy Veg Burger",price:225,category:"burgers" },
+{ {name: "Crispy Veg Double",price:225,category:"burgers" },
+{ {name: "Crunchy Chicken Taco",price:225,category:"burgers" },
+{ {name: "Veggie Burger",price:225,category:"burgers" },
+{ {name: "Veggie Double Patty",price:225,category:"burgers" },
+{ {name: "Veg Makhani Burst",price:225,category:"burgers" },
+{ {name: "Whopper Jr",price:225,category:"burgers" }
+])
 {chickenBurger}
 {ChickenDoublePattyBurger}
 {CrispyChickenBurger}
@@ -14,25 +27,26 @@
 
 ---
 
-Americano-Small.jpeg
-Berry-Blast.jpeg
-cafe-latte-Regular.jpeg
-Cafe-Latte.jpeg
-Cappuccino-Small.jpeg
-Choco-Thick-Shake.jpeg
-Choco-ThickShake.jpeg
-chocolate-Mousse-Soup.jpeg
-Coca-Cola-M.jpeg
-Fanta-M.jpeg
-filelist.txt
-hot-chocolate.jpeg
-Ice-Tea.jpeg
-Iced-Americano.jpeg
-Mango-Shake.jpeg
-MediumSoftDrink.jpeg
-Muffin.jpeg
-Sprite-M.jpeg
-Water.jpeg
+db.menuItems.insertMany([
+    {name:"Berry-Blast",price:280,category:"pizzas"},
+    {name:"Americano-Small",price:280,category:"pizzas"},
+    {name:"cafe-latte-Regular",price:280,category:"pizzas"},
+    {name:"Cafe-Latte",price:280,category:"pizzas"},
+    {name:"Cappuccino-Small",price:280,category:"pizzas"},
+    {name:"Choco-Thick-Shake",price:280,category:"pizzas"},
+    {name:"Choco-ThickShake",price:280,category:"pizzas"},
+    {name:"chocolate-Mousse-Soup",price:280,category:"pizzas"},
+    {name:"Coca-Cola-M",price:280,category:"pizzas"},
+    {name:"Fanta-M",price:280,category:"pizzas"},
+    {name:"hot-chocolate",price:280,category:"pizzas"},
+    {name:"Ice-Tea",price:280,category:"pizzas"},
+    {name:"Iced-Americano",price:280,category:"pizzas"},
+    {name:"Mango-Shake",price:280,category:"pizzas"},
+    {name:"MediumSoftDrink",price:280,category:"pizzas"},
+    {name:"Muffin",price:280,category:"pizzas"},
+    {name:"Sprite-M",price:280,category:"pizzas"},
+    {name:"Water",price:280,category:"pizzas"}
+])
 
 ---
 
@@ -49,7 +63,6 @@ corn.-chesse.jpg
 country-feast-cheese.jpg
 country-feast..jpg
 Domino-Pizza.avif
-filelist.txt
 Kadhai-Paneer.jpg
 malai-chicken-tikka.jpg
 mexican-fiesta.jpg
@@ -60,26 +73,26 @@ veggie-supreme-cheese.jpg
 
 ---
 
-Boneless-Wings-Regular.jpeg
-Boneless-Wings.jpeg
-Chicken-Wings-Fried.jpeg
-Chicken-Wings-Grilled.jpeg
-Chicken-Wings-Medium.jpeg
-Chicken-Wings.jpeg
-chilli-sauce.jpeg
+Boneless-Wings-Regular
+Boneless-Wings
+Chicken-Wings-Fried
+Chicken-Wings-Grilled
+Chicken-Wings-Medium
+Chicken-Wings
+chilli-sauce
 filelist.txt
-Fries-king.jpeg
-Fries-Medium.jpeg
-Masala-hashbrown.jpeg
-Peri-peri-Fries.jpeg
-Peri-peri-spice-mix.jpeg
-Saucy-Fries.jpeg
-Veg-pizza-puff.jpeg
+Fries-king
+Fries-Medium
+Masala-hashbrown
+Peri-peri-Fries
+Peri-peri-spice-mix
+Saucy-Fries
+Veg-pizza-puff
 
 ---
 
-beetroot.jpeg
-brinjal.jpeg
+beetroot
+brinjal
 buckwheat.jpg
 cabbage.jpg
 Capsicum.jpg
@@ -90,7 +103,7 @@ filelist.txt
 lady-finger.png
 pasta.jpg
 peppers.jpg
-potato.jpeg
+potato
 quinoa.jpg
 radishes.jpg
 Sovoy.jpg

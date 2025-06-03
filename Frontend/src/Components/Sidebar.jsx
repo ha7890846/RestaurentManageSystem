@@ -18,7 +18,7 @@ const Sidebar = () => {
         <NavLink to="/orders" className="nav-link">
           <BiSolidFoodMenu size={30}/>
         </NavLink>
-        <NavLink to="/cart" className="nav-link">
+        <NavLink to="/menu/burgers" className="nav-link">
           <MdBarChart size={30}/>
         </NavLink>
       </nav>

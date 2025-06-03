@@ -8,6 +8,8 @@ const Tables = () => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState([]);
   const [nextTableNum, setNextTableNum] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleOpen = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -50,10 +52,19 @@ const Tables = () => {
     fetchTables();
   }, []);
   const fetchTables = async () => {
-    const res = await axios.get("https://restaurent-backend-bzlm.onrender.com/api/table");
-    setFormData(res.data);
-    console.log(res.data);
+    try {
+      const res = await axios.get(
+        "https://restaurent-backend-bzlm.onrender.com/api/table"
+      );
+      setFormData(res.data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
+  if (loading) return <div>Loading menu items...</div>;
+  if (error) return <div>Error: {error}</div>;
   return (
     <main className="table-container">
       <div>

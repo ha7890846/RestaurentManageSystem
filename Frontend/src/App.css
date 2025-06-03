@@ -320,12 +320,14 @@
 /* Cart Styling */
 .cart-main {
   background-color: #fff;
-  width: 100vw;
+  width: calc(100vw - 70px);
   height: 100vh;
+  padding: 15px;
+  border-radius: 15px;
 }
 .cart-search {
   height: 40px;
-  width: 80vw;
+  width: 90vw;
   background-color: #f0f5f3;
   display: flex;
   align-items: center;
@@ -352,6 +354,7 @@
   color: #fff;
   box-shadow: 0 0 10px #616161;
 }
+
 .cart-header {
   width: 100%;
   height: fit-content;
@@ -394,4 +397,28 @@
   position: relative;
   left: 80%;
   bottom: 30px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.item-section{
+  margin: 15px;
+}
+.menu-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.add-to-cart-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
 }
