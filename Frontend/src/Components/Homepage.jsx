@@ -8,7 +8,13 @@ const Homepage = () => {
       <div className="first">
         <img src={logo} alt="logo" />
       </div>
-      <div className="second">2</div>
+      <div className="second">
+        <div className="filter-box">
+          Filter
+        </div>
+        <div>
+        </div>
+      </div>
       <div className="third">
         <Sidebar />
       </div>

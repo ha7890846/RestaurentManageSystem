@@ -22,17 +22,15 @@ const CartItem = () => {
       </div>
       <div className="order-type-toggle">
         <button
-          className={`order-type-btn ${
-            orderType === "dine-in" ? "active" : ""
-          }`}
+          className={`order-type-btn ${orderType === "dine-in" ? "active" : ""
+            }`}
           onClick={() => setOrderType("dine-in")}
         >
           Dine-In
         </button>
         <button
-          className={`order-type-btn ${
-            orderType === "takeaway" ? "active" : ""
-          }`}
+          className={`order-type-btn ${orderType === "takeaway" ? "active" : ""
+            }`}
           onClick={() => setOrderType("takeaway")}
         >
           Take Away
@@ -55,9 +53,9 @@ const CartItem = () => {
       <section className="delivery-info">
         <p>Your Details:</p>
         <form action="submit" className="cust-detail">
-          <input type="text" name="cust-name" placeholder="Enter Name"/>
+          <input type="text" name="cust-name" placeholder="Enter Name" />
           <input type="text" name="cust-num" placeholder="Enter Mobile" />
-          <input type="text" name="cust-add" placeholder="Address"/>
+          <input type="text" name="cust-add" placeholder="Address" />
         </form>
       </section>
       <div>
@@ -65,12 +63,12 @@ const CartItem = () => {
         <p>Delivery in time 12min</p>
       </div>
       <div className="App">
-      <div className="app">
-      <h1>Complete Your Action</h1>
-      <SlideToProceed/>
-         
-    </div>
-    </div>
+        <div className="app">
+          <h1>Complete Your Action</h1>
+          <SlideToProceed />
+
+        </div>
+      </div>
     </main>
   );
 };

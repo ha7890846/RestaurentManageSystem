@@ -33,8 +33,8 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-  if (loading) return <div>Loading menu items...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="loading">Loading menu...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
   return (
     <main className="dashboard-container">
       <h1 style={{ fontSize: "22px", fontWeight: "250" }}>Analytics</h1>
